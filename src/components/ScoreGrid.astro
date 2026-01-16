@@ -28,16 +28,16 @@ const defaultIcon = type === "movies" ? "🎬" : "🎮";
 <div class="space-y-12 sm:space-y-16 mt-8 sm:mt-12">
     {
         sortedScores.map((score) => (
-            <div class="flex flex-col sm:flex-row gap-4 sm:gap-12">
+            <div class="flex flex-col sm:flex-row gap-4">
                 {/* Left Column: Score */}
-                <div class="flex flex-row sm:flex-col items-center sm:items-start pt-0 sm:pt-6 pb-4 sm:pb-0 border-b sm:border-b-0 border-zinc-100 dark:border-zinc-800">
-                    <div class="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 text-lg sm:text-xl font-bold rounded-xl bg-linear-to-br from-teal-500 to-sky-500 text-white shadow-sm sticky top-24 shrink-0 z-10 transition-all duration-300 hover:scale-105 hover:shadow-md hover:from-teal-400 hover:to-sky-400">
+                <div class="flex flex-row sm:flex-col items-center sm:items-start pt-0 pb-4 sm:pb-0 border-b sm:border-b-0 border-zinc-100 dark:border-zinc-800">
+                    <div class="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 text-lg sm:text-xl font-bold rounded-xl bg-white dark:bg-zinc-800 border border-neutral-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 shadow-xs sticky top-24 shrink-0 z-10">
                         {score}
                     </div>
                 </div>
 
                 {/* Right Column: Items Grid */}
-                <div class="flex-1 flex flex-wrap gap-4 border-t border-zinc-100 dark:border-zinc-700/40 p-4 sm:p-0 pt-4 sm:pt-0">
+                <div class="flex-1 flex flex-wrap gap-4 border-t border-zinc-100 dark:border-zinc-700/40 p-4 pt-4">
                     {groupedItems[score].map((item: any) => (
                         <div class="group relative w-[160px] h-[240px] rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                             {item.poster || item.cover ? (

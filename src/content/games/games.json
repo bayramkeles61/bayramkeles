@@ -34,5 +34,23 @@
         "genre": "City Builder/Survival",
         "review": "Şehir kurma ve hayatta kalma türlerinin zorlu ve atmosferik bir birleşimi. Ahlaki seçimler can yakıyor.",
         "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/323190/library_600x900.jpg"
+    },
+    {
+        "title": "Heroes of Might and Magic III",
+        "year": 1999,
+        "score": 9.0,
+        "platform": "PC",
+        "genre": "Strategy",
+        "review": "Sıra tabanlı stratejinin zirvesi. Müzikleri, atmosferi ve oynanışı ile hala eskimeyen bir başyapıt.",
+        "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297000/library_600x900.jpg"
+    },
+    {
+        "title": "Clair Obscur: Expedition 33",
+        "year": 2025,
+        "score": 9.0,
+        "platform": "PC",
+        "genre": "RPG",
+        "review": "Sanatsal yönetimi ve hikaye anlatımıyla büyüleyen, sıra tabanlı savaş sistemine taze bir soluk getiren bir RPG.",
+        "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1903340/library_600x900.jpg"
     }
 ]
