@@ -1,35 +1,36 @@
 [
     {
-        "title": "Personal Website",
-        "description": "Astro.js ile geliştirdiğim kişisel web sitem. Blog, portföy ve daha fazlası.",
-        "github": "https://github.com/bayramkeles/personal-website",
+        "title": {
+            "tr": "Tagmento",
+            "en": "Tagmento"
+        },
+        "description": {
+            "tr": "shadcn/ui ile geliştirilmiş, tam özellikli bir etiket (tag) giriş bileşeni. React ve Tailwind CSS ile uyumlu.",
+            "en": "A fully-featured tag input component built with shadcn/ui. Compatible with React and Tailwind CSS."
+        },
+        "github": "https://github.com/bayramkeles61/tagmento",
         "tags": [
-            "Astro",
+            "React",
+            "shadcn/ui",
             "TypeScript",
             "Tailwind CSS"
         ],
         "featured": true
     },
     {
-        "title": "Task Manager CLI",
-        "description": "Terminal üzerinden görev yönetimi yapabileceğiniz hafif bir CLI aracı.",
-        "github": "https://github.com/bayramkeles/task-manager-cli",
+        "title": {
+            "tr": "Kişisel Web Sitesi",
+            "en": "Personal Website"
+        },
+        "description": {
+            "tr": "Astro.js, Tailwind CSS ve Cloudflare Pages ile geliştirdiğim, çok dilli ve performans odaklı kişisel web sitem.",
+            "en": "My personal website built with Astro.js, Tailwind CSS, and Cloudflare Pages. Features multi-language support and high performance."
+        },
+        "github": "https://github.com/bayramkeles61/bayramkeles",
         "tags": [
-            "Node.js",
-            "CLI",
-            "TypeScript"
-        ],
-        "featured": false
-    },
-    {
-        "title": "Weather App",
-        "description": "Gerçek zamanlı hava durumu uygulaması. OpenWeather API kullanılarak geliştirildi.",
-        "github": "https://github.com/bayramkeles/weather-app",
-        "demo": "https://weather.bayramkeles.com",
-        "tags": [
-            "React",
-            "API",
-            "CSS"
+            "Astro",
+            "TypeScript",
+            "Tailwind CSS"
         ],
         "featured": true
     }

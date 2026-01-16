@@ -15,7 +15,7 @@ import X from "@lucide/astro/icons/x";
 
 import House from "@lucide/astro/icons/house";
 import BookOpen from "@lucide/astro/icons/book-open";
-import Code from "@lucide/astro/icons/code";
+import Rocket from "@lucide/astro/icons/rocket";
 import Film from "@lucide/astro/icons/film";
 import Gamepad2 from "@lucide/astro/icons/gamepad-2";
 import Image from "@lucide/astro/icons/image";
@@ -33,12 +33,12 @@ const navItems = [
     //     key: "2",
     //     icon: BookOpen,
     // },
-    // {
-    //     href: getRelativeLocaleUrl(lang, "projects"),
-    //     label: t("nav.projects"),
-    //     // key: "3",
-    //     icon: Code,
-    // },
+    {
+        href: getRelativeLocaleUrl(lang, "projects"),
+        label: t("nav.projects"),
+        key: "2",
+        icon: Rocket,
+    },
     {
         href: getRelativeLocaleUrl(lang, "favorites"),
         label: t("nav.favorites"),
