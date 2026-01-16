@@ -1,0 +1,11 @@
+---
+import Gallery from "../../components/pages/Gallery.astro";
+
+export function getStaticPaths() {
+    return [{ params: { lang: "en" } }];
+}
+
+const { lang } = Astro.params;
+---
+
+<Gallery lang={lang as "en" | "tr"} />

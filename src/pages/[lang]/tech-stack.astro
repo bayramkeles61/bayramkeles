@@ -1,0 +1,11 @@
+---
+import TechStack from "../../components/pages/TechStack.astro";
+
+export function getStaticPaths() {
+    return [{ params: { lang: "en" } }];
+}
+
+const { lang } = Astro.params;
+---
+
+<TechStack lang={lang as "en" | "tr"} />

@@ -1,0 +1,11 @@
+---
+import BlogIndex from "../../../components/pages/BlogIndex.astro";
+
+export function getStaticPaths() {
+    return [{ params: { lang: "en" } }];
+}
+
+const { lang } = Astro.params;
+---
+
+<BlogIndex lang={lang as "en" | "tr"} />

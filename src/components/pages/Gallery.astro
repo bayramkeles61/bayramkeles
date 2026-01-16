@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SimplePageLayout from "../../layouts/SimplePageLayout.astro";
+import { getCollection } from 'astro:content';
+
+interface Props {
+    lang: "tr" | "en";
+}
+
+const { lang } = Astro.props;
+
+const galleryData = await getCollection('gallery');
+const gallery = galleryData[0]?.data || [];
+
+const title = lang === 'tr' ? "Galeri" : "Gallery";
+const description = lang === 'tr' ? "Fotoğraf galerim." : "My photo gallery.";
+const pageTitle = lang === 'tr' ? "Anlar: kamerayla yakaladıklarım." : "Moments: captured with a camera.";
+const pageIntro = lang === 'tr'
+    ? "Çektiğim fotoğraflar. Her birinin bir hikayesi var. Genellikle sokak fotoğrafçılığı ve manzara çekimlerini seviyorum."
+    : "Photos I've taken. Each has a story. I generally love street photography and landscape shots.";
+
+const noPhotosText = lang === 'tr' ? "Fotoğraflar yakında eklenecek." : "Photos coming soon.";
+
+---
+
+<SimplePageLayout
+    title={title}
+    description={description}
+    pageTitle={pageTitle}
+    pageIntro={pageIntro}
+>
+    <!-- Gallery Grid - Spotlight Style -->
+    {gallery.length > 0 ? (
+        <ul class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-8 list-none p-0">
+            {gallery.map((photo: any, index: number) => (
+                <li class="relative">
+                    <div class:list={[
+                        "group relative aspect-[10/7] overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800",
+                        "ring-1 ring-zinc-100 dark:ring-zinc-800 transition-all duration-300",
+                        "hover:ring-teal-500 hover:shadow-lg hover:shadow-teal-500/10"
+                    ]}>
+                        <!-- Placeholder - gerçek fotoğraf eklendiğinde img tag'i kullanılacak -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-linear-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900">
+                            <span class="text-4xl opacity-60">📷</span>
+                        </div>
+                        {photo.image && (
+                            <img 
+                                src={photo.image} 
+                                alt={photo.title}
+                                class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                        )}
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                        <div class="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                            <span class="text-sm font-medium">{photo.title}</span>
+                            {photo.location && (
+                                <span class="block text-xs text-white/70">{photo.location}</span>
+                            )}
+                        </div>
+                    </div>
+                </li>
+            ))}
+        </ul>
+    ) : (
+        <div class="text-center py-16">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-800 mb-4">
+                <span class="text-3xl">📷</span>
+            </div>
+            <p class="text-zinc-400 dark:text-zinc-500">{noPhotosText}</p>
+        </div>
+    )}
+</SimplePageLayout>

@@ -1,0 +1,74 @@
+[
+    {
+        "name": "TypeScript",
+        "category": "language",
+        "proficiency": "advanced",
+        "description": "Tip güvenliği ve modern JavaScript özellikleri için tercih ettiğim dil."
+    },
+    {
+        "name": "JavaScript",
+        "category": "language",
+        "proficiency": "expert",
+        "description": "Web geliştirmenin temeli. ES6+ özellikleriyle güçlü projeler."
+    },
+    {
+        "name": "Python",
+        "category": "language",
+        "proficiency": "intermediate",
+        "description": "Otomasyon ve veri işleme için kullanıyorum."
+    },
+    {
+        "name": "React",
+        "category": "frontend",
+        "proficiency": "advanced",
+        "description": "Kompleks UI'lar için go-to framework'üm."
+    },
+    {
+        "name": "Astro",
+        "category": "frontend",
+        "proficiency": "intermediate",
+        "description": "İçerik odaklı siteler için mükemmel. Bu site de Astro ile yapıldı!"
+    },
+    {
+        "name": "Tailwind CSS",
+        "category": "frontend",
+        "proficiency": "advanced",
+        "description": "Hızlı ve tutarlı styling için vazgeçilmez."
+    },
+    {
+        "name": "Node.js",
+        "category": "backend",
+        "proficiency": "advanced",
+        "description": "Backend ve CLI araçları için tercihim."
+    },
+    {
+        "name": "PostgreSQL",
+        "category": "database",
+        "proficiency": "intermediate",
+        "description": "Güvenilir ve güçlü ilişkisel veritabanı."
+    },
+    {
+        "name": "Docker",
+        "category": "devops",
+        "proficiency": "intermediate",
+        "description": "Containerization ve deployment için."
+    },
+    {
+        "name": "Git",
+        "category": "tools",
+        "proficiency": "advanced",
+        "description": "Versiyon kontrolü olmazsa olmaz."
+    },
+    {
+        "name": "VS Code",
+        "category": "tools",
+        "proficiency": "expert",
+        "description": "Ana editörüm. Extensionlar ile süper güçlü."
+    },
+    {
+        "name": "Neovim",
+        "category": "tools",
+        "proficiency": "intermediate",
+        "description": "Terminal'de hızlı düzenlemeler için."
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "title": "BioShock",
+        "year": 2007,
+        "score": 8.5,
+        "platform": "PC",
+        "genre": "FPS/Rpg",
+        "review": "Rapture'ın atmosferi ve hikaye anlatımı eşsiz. Would you kindly?",
+        "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/409710/library_600x900.jpg"
+    },
+    {
+        "title": "BioShock 2",
+        "year": 2010,
+        "score": 8.5,
+        "platform": "PC",
+        "genre": "FPS/Rpg",
+        "review": "İlk oyunun güçlü temelleri üzerine kurulu, duygusal bir baba-kız hikayesi.",
+        "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/409720/library_600x900.jpg"
+    },
+    {
+        "title": "BioShock Infinite",
+        "year": 2013,
+        "score": 5.3,
+        "platform": "PC",
+        "genre": "FPS",
+        "review": "Görsel olarak büyüleyici olsa da, hikaye ve oynanış önceki oyunların derinliğini yakalayamadı.",
+        "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8870/library_600x900.jpg"
+    },
+    {
+        "title": "Frostpunk",
+        "year": 2018,
+        "score": 8.5,
+        "platform": "PC",
+        "genre": "City Builder/Survival",
+        "review": "Şehir kurma ve hayatta kalma türlerinin zorlu ve atmosferik bir birleşimi. Ahlaki seçimler can yakıyor.",
+        "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/323190/library_600x900.jpg"
+    }
+]

@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SimplePageLayout from "../../layouts/SimplePageLayout.astro";
+import { getCollection } from "astro:content";
+import AccordionItem from "../AccordionItem.astro";
+
+interface Props {
+    lang: "tr" | "en";
+}
+
+const { lang } = Astro.props;
+
+const moviesData = await getCollection("movies");
+const movies = moviesData.flatMap((item) => item.data);
+const sortedMovies = [...movies].sort((a: any, b: any) => b.score - a.score);
+
+const title = lang === "tr" ? "Filmler" : "Movies";
+const description =
+    lang === "tr"
+        ? "Sevdiğim filmler ve kısa değerlendirmelerim."
+        : "Movies I love and my short reviews.";
+const pageTitle =
+    lang === "tr"
+        ? "Sinema: hayatın başka bir penceresi."
+        : "Cinema: another window into life.";
+const pageIntro =
+    lang === "tr"
+        ? "İzleyip beğendiğim filmler. Tıklayarak görüşlerimi okuyabilirsin. Puanlar tamamen subjektif ve o anki halime göre değişebilir."
+        : "Movies I've watched and liked. You can click to read my thoughts. Scores are completely subjective and might change depending on my mood.";
+
+const groupedMovies = sortedMovies.reduce((acc: any, movie: any) => {
+    const score = movie.score;
+    if (!acc[score]) {
+        acc[score] = [];
+    }
+    acc[score].push(movie);
+    return acc;
+}, {});
+
+const sortedScores = Object.keys(groupedMovies)
+    .map(Number)
+    .sort((a, b) => b - a);
+
+const noMoviesText =
+    lang === "tr" ? "Henüz film eklenmedi." : "No movies added yet.";
+---
+
+<SimplePageLayout
+    title={title}
+    description={description}
+    pageTitle={pageTitle}
+    pageIntro={pageIntro}
+>
+    <!-- Movies List -->
+    {
+        sortedMovies.length > 0 ? (
+            <div class="space-y-12 sm:space-y-16 mt-8 sm:mt-12">
+                {sortedScores.map((score) => (
+                    <div class="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-4 sm:gap-12">
+                        {/* Left Column: Score */}
+                        <div class="flex flex-row sm:flex-col items-center sm:items-start pt-0 sm:pt-6 pb-4 sm:pb-0 border-b sm:border-b-0 border-zinc-100 dark:border-zinc-800">
+                            <div class="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 text-lg sm:text-xl font-bold rounded-xl bg-linear-to-br from-teal-500 to-sky-500 text-white shadow-sm sticky top-24 shrink-0 z-10">
+                                {score}
+                            </div>
+                        </div>
+
+                        {/* Right Column: Movies Grid */}
+                        <div class="flex flex-wrap gap-4 border-t border-zinc-100 dark:border-zinc-700/40 p-4 sm:p-0 pt-4 sm:pt-0">
+                            {groupedMovies[score].map(
+                                (movie: any, index: number) => (
+                                    <div class="group relative w-[160px] h-[240px] rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                                        {movie.poster ? (
+                                            <img
+                                                src={movie.poster}
+                                                alt={movie.title}
+                                                class="w-full h-full object-cover"
+                                                loading="lazy"
+                                            />
+                                        ) : (
+                                            <div class="w-full h-full flex flex-col items-center justify-center p-4 text-center text-zinc-400">
+                                                <span class="text-4xl mb-2">
+                                                    🎬
+                                                </span>
+                                                <span class="text-xs font-medium text-zinc-500">
+                                                    {movie.title}
+                                                </span>
+                                            </div>
+                                        )}
+
+                                        {/* Overlay with details on hover */}
+                                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-white">
+                                            <h3 class="font-bold text-sm leading-tight mb-1">
+                                                {movie.title}
+                                            </h3>
+                                            <p class="text-xs text-zinc-300 line-clamp-2">
+                                                {movie.review}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ),
+                            )}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        ) : (
+            <div class="text-center py-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-800 mb-4">
+                    <span class="text-3xl">🎬</span>
+                </div>
+                <p class="text-zinc-400 dark:text-zinc-500">{noMoviesText}</p>
+            </div>
+        )
+    }
+</SimplePageLayout>

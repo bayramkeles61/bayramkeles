@@ -1,0 +1,21 @@
+---
+import BlogPostLayout from "../../../components/pages/BlogPostLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    // Generate paths for 'en' language for each post
+    return posts.map((post) => ({
+        params: { lang: "en", slug: post.slug },
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { lang } = Astro.params;
+---
+
+<BlogPostLayout lang={lang as "en" | "tr"} post={post}>
+    <Content />
+</BlogPostLayout>

@@ -1,0 +1,11 @@
+---
+import Games from "../../components/pages/Games.astro";
+
+export function getStaticPaths() {
+    return [{ params: { lang: "en" } }];
+}
+
+const { lang } = Astro.params;
+---
+
+<Games lang={lang as "en" | "tr"} />

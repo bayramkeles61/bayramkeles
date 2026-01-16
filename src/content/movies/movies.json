@@ -1,0 +1,317 @@
+[
+  {
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "score": 8.4,
+    "genre": "Drama",
+    "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+    "director": "Frank Darabont",
+    "review": "Umut ve özgürlük hakkında anlatılmış en güçlü hikaye. Andy Dufresne'in sabrı ve zekası ilham verici."
+  },
+  {
+    "title": "Jumanji",
+    "year": 1995,
+    "score": 8.5,
+    "genre": "Macera/Fantastik",
+    "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/87MqqgiT4Pf6x6G1rEA9DLgUCjd.jpg",
+    "director": "Joe Johnston",
+    "review": "Zarlar atıldı, oyun başladı. Çocukluğumuzun en heyecanlı macerası."
+  },
+  {
+    "title": "Mad Max: Fury Road",
+    "year": 2015,
+    "score": 8.5,
+    "genre": "Aksiyon",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/6/6e/Mad_Max_Fury_Road.jpg",
+    "director": "George Miller",
+    "review": "Adrenalin dolu bir görsel şölen. Sinematografisi ve pratik efektleri inanılmaz."
+  },
+  {
+    "title": "The Matrix",
+    "year": 1999,
+    "score": 8.4,
+    "genre": "Bilim Kurgu",
+    "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+    "director": "Wachowski Kardeşler",
+    "review": "Felsefe ve aksiyonu mükemmel harmanlayan, sinemayı değiştiren bir film."
+  },
+  {
+    "title": "Star Trek",
+    "year": 2009,
+    "score": 8.4,
+    "genre": "Bilim Kurgu",
+    "poster": "https://www.themoviedb.org/t/p/w1280/9vaRPXj44Q2meHgt3VVfQufiHOJ.jpg",
+    "director": "J.J. Abrams",
+    "review": "Efsanevi serinin modern ve dinamik bir yeniden başlatılması."
+  },
+  {
+    "title": "Star Trek Into Darkness",
+    "year": 2013,
+    "score": 8.4,
+    "genre": "Bilim Kurgu",
+    "poster": "https://www.themoviedb.org/t/p/w1280/eXbCboT5mMv9RH1E7ogzIytN302.jpg",
+    "director": "J.J. Abrams",
+    "review": "Khan'ın dönüşü ve ekibin zorlu sınavı."
+  },
+  {
+    "title": "Star Trek Beyond",
+    "year": 2016,
+    "score": 8.4,
+    "genre": "Bilim Kurgu",
+    "poster": "https://www.themoviedb.org/t/p/w1280/r52mrk1hQnvlSakqU8W8W3HONEB.jpg",
+    "director": "Justin Lin",
+    "review": "Uzayın derinliklerinde, ekip ruhunun ön plana çıktığı bir macera."
+  },
+  {
+    "title": "Jurassic Park",
+    "year": 1993,
+    "score": 8.4,
+    "genre": "Macera",
+    "poster": "https://www.themoviedb.org/t/p/w1280/8nSi7W1pG1KgqHS9kp3EsGoeKtA.jpg",
+    "director": "Steven Spielberg",
+    "review": "Dinozorları hayata döndüren, sinema tarihinin dönüm noktalarından biri."
+  },
+  {
+    "title": "The Lost World: Jurassic Park",
+    "year": 1997,
+    "score": 8.4,
+    "genre": "Macera",
+    "poster": "https://www.themoviedb.org/t/p/w1280/bMwP9vq7juweGJcgq70CrpO0UHQ.jpg",
+    "director": "Steven Spielberg",
+    "review": "Kaosun San Diego'ya taşındığı devam filmi."
+  },
+  {
+    "title": "Jurassic Park III",
+    "year": 2001,
+    "score": 8.4,
+    "genre": "Macera",
+    "poster": "https://www.themoviedb.org/t/p/w1280/evUJpV6wfX8mHCuuHTTdCK0EiEl.jpg",
+    "director": "Joe Johnston",
+    "review": "Spinosaurus'un sahneye çıktığı heyecanlı bir kurtarma operasyonu."
+  },
+  {
+    "title": "Jurassic World",
+    "year": 2015,
+    "score": 8.4,
+    "genre": "Macera",
+    "poster": "https://www.themoviedb.org/t/p/w1280/rhr4y79GpxQF9IsfJItRXVaoGs4.jpg",
+    "director": "Colin Trevorrow",
+    "review": "Parkın nihayet açıldığı ve kaosun yeniden hüküm sürdüğü modern bir klasik."
+  },
+  {
+    "title": "Jurassic World: Fallen Kingdom",
+    "year": 2018,
+    "score": 8.4,
+    "genre": "Macera",
+    "poster": "https://www.themoviedb.org/t/p/w1280/jyzpYINa5p2YTZ1M8aE5T3IUexR.jpg",
+    "director": "J.A. Bayona",
+    "review": "Adanın yok oluşu ve dinozorların dünyamıza yayılışı."
+  },
+  {
+    "title": "The Hangover",
+    "year": 2009,
+    "score": 8.1,
+    "genre": "Komedi",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/b/b9/Hangoverposter09.jpg",
+    "director": "Todd Phillips",
+    "review": "Las Vegas'ta unutulan bir gece ve kahkaha dolu bir arayış."
+  },
+  {
+    "title": "The Hangover Part II",
+    "year": 2011,
+    "score": 8.1,
+    "genre": "Komedi",
+    "poster": "https://www.themoviedb.org/t/p/w1280/hHMcMyIz3fdyTDPYMepQBjXl4Tj.jpg",
+    "director": "Todd Phillips",
+    "review": "Bu sefer Bangkok'ta işler çığrından çıkıyor."
+  },
+  {
+    "title": "The Hangover Part III",
+    "year": 2013,
+    "score": 8.1,
+    "genre": "Komedi",
+    "poster": "https://www.themoviedb.org/t/p/w1280/t7b6L8HZDq5N0tix8dhOmBufAJt.jpg",
+    "director": "Todd Phillips",
+    "review": "Wolfpack'in son macerası ve epik bir final."
+  },
+  {
+    "title": "Guardians of the Galaxy",
+    "year": 2014,
+    "score": 8.0,
+    "genre": "Aksiyon/Bilim Kurgu",
+    "poster": "https://www.themoviedb.org/t/p/w1280/g9NAhhkM3nSstFRVHWgnnDdavv5.jpg",
+    "director": "James Gunn",
+    "review": "Müzikleri, mizahı ve karakterleriyle Marvel evreninin en eğlenceli ekibi."
+  },
+  {
+    "title": "Guardians of the Galaxy Vol. 2",
+    "year": 2017,
+    "score": 8.0,
+    "genre": "Aksiyon/Bilim Kurgu",
+    "poster": "https://www.themoviedb.org/t/p/w1280/gDQXXrL6aBqIQ38GivPVWgjZXv7.jpg",
+    "director": "James Gunn",
+    "review": "Aile bağları ve Baby Groot ile duygusal ve renkli bir devam filmi."
+  },
+  {
+    "title": "Jumanji: Welcome to the Jungle",
+    "year": 2017,
+    "score": 8.0,
+    "genre": "Macera/Komedi",
+    "poster": "https://www.themoviedb.org/t/p/w1280/hDmrv2Ac65QNHxFu8ZcePwlDgc0.jpg",
+    "director": "Jake Kasdan",
+    "review": "Video oyunu dünyasına modern ve eğlenceli bir bakış."
+  },
+  {
+    "title": "Jumanji: The Next Level",
+    "year": 2019,
+    "score": 8.0,
+    "genre": "Macera/Komedi",
+    "poster": "https://www.themoviedb.org/t/p/w1280/uslyV3FkKdQHMxpdnvq1bL4YfYV.jpg",
+    "director": "Jake Kasdan",
+    "review": "Oyunun kuralları değişiyor, macera seviye atlıyor."
+  },
+  {
+    "title": "The Meg",
+    "year": 2018,
+    "score": 8.0,
+    "genre": "Aksiyon/Gerilim",
+    "poster": "https://www.themoviedb.org/t/p/w1280/u9htyz3ua5ELz0dsBMt4PWcSDAp.jpg",
+    "director": "Jon Turteltaub",
+    "review": "Devasa bir köpekbalığı ve Jason Statham. Saf eğlence."
+  },
+  {
+    "title": "Meg 2: The Trench",
+    "year": 2023,
+    "score": 8.0,
+    "genre": "Aksiyon/Gerilim",
+    "poster": "https://www.themoviedb.org/t/p/w1280/euUHvM4iQjNVES4cS6LLx5jJuTh.jpg",
+    "director": "Ben Wheatley",
+    "review": "Daha büyük, daha derin ve daha fazla aksiyon."
+  },
+  {
+    "title": "The Pacifier",
+    "year": 2005,
+    "score": 8.0,
+    "genre": "Komedi",
+    "poster": "https://www.themoviedb.org/t/p/w1280/sADDvMNwjXYUKxsv6igD46w1Vo4.jpg",
+    "director": "Adam Shankman",
+    "review": "Vin Diesel'in en komik ve sıcak aile filmlerinden biri."
+  },
+  {
+    "title": "Journey 2: The Mysterious Island",
+    "year": 2012,
+    "score": 8.0,
+    "genre": "Macera",
+    "poster": "https://www.themoviedb.org/t/p/w1280/oMsYWOyks2lWUB4cuuLseTLXoKh.jpg",
+    "director": "Brad Peyton",
+    "review": "Jules Verne'in dünyasında fantastik bir yolculuk."
+  },
+  {
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "score": 8.0,
+    "genre": "Suç/Drama",
+    "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+    "director": "Quentin Tarantino",
+    "review": "Kült diyaloglar ve unutulmaz karakterler."
+  },
+  {
+    "title": "Pacific Rim",
+    "year": 2013,
+    "score": 7.9,
+    "genre": "Aksiyon/Bilim Kurgu",
+    "poster": "https://www.themoviedb.org/t/p/w1280/5bzMFMdkkDsv7nJPEyCqMdl1Cr6.jpg",
+    "director": "Guillermo del Toro",
+    "review": "Dev robotlar (Jaeger) ve dev canavarlar (Kaiju) arasındaki epik savaş."
+  },
+  {
+    "title": "Pacific Rim: Uprising",
+    "year": 2018,
+    "score": 7.9,
+    "genre": "Aksiyon/Bilim Kurgu",
+    "poster": "https://www.themoviedb.org/t/p/w1280/f6e4G3xJ6vH9ApOCLG3Ll5hAoTX.jpg",
+    "director": "Steven S. DeKnight",
+    "review": "Yeni nesil pilotlar ve gelişmiş Jaeger'lar ile savaş devam ediyor."
+  },
+  {
+    "title": "Cocaine Bear",
+    "year": 2023,
+    "score": 7.5,
+    "genre": "Komedi/Gerilim",
+    "poster": "https://www.themoviedb.org/t/p/w1280/calwa49E1BYEb5lSE9vwDipEeAR.jpg",
+    "director": "Elizabeth Banks",
+    "review": "İsminden de anlaşılacağı gibi çılgın, absürt ve eğlenceli."
+  },
+  {
+    "title": "Düğün Dernek",
+    "year": 2013,
+    "score": 7.5,
+    "genre": "Komedi",
+    "poster": "https://www.themoviedb.org/t/p/w1280/xlkjSMHJvgqOTMa2cQyn9GscA8E.jpg",
+    "director": "Selçuk Aydemir",
+    "review": "İmece usulü bir Sivas düğünü hikayesi. Gülmekten karnınıza ağrılar girebilir."
+  },
+  {
+    "title": "Düğün Dernek 2: Sünnet",
+    "year": 2015,
+    "score": 7.5,
+    "genre": "Komedi",
+    "poster": "https://www.themoviedb.org/t/p/w1280/hDwthBPG9MH75pQMMwmEciJf3j6.jpg",
+    "director": "Selçuk Aydemir",
+    "review": "Ekip bu sefer sünnet düğünü için toplanıyor, macera kaldığı yerden devam ediyor."
+  },
+  {
+    "title": "Inception",
+    "year": 2010,
+    "score": 7.0,
+    "genre": "Bilim Kurgu",
+    "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg",
+    "director": "Christopher Nolan",
+    "review": "Rüyalar ve gerçeklik arasında karmaşık bir soygun."
+  },
+  {
+    "title": "Dungeons & Dragons: Honor Among Thieves",
+    "year": 2023,
+    "score": 6.8,
+    "genre": "Fantastik/Macera",
+    "poster": "https://www.themoviedb.org/t/p/w1280/Aa4I4p7JGZfpLqwzdr1SwKODkGG.jpg",
+    "director": "Jonathan Goldstein",
+    "review": "Fantastik dünyaları ve mizahı başarıyla birleştiren keyifli bir macera."
+  },
+  {
+    "title": "Guardians of the Galaxy Vol. 3",
+    "year": 2023,
+    "score": 6.5,
+    "genre": "Aksiyon/Bilim Kurgu",
+    "poster": "https://www.themoviedb.org/t/p/w1280/fbK6py6t9ikhWbsz3tIeXgiBCCn.jpg",
+    "director": "James Gunn",
+    "review": "Ekibin hüzünlü ve aksiyon dolu vedası."
+  },
+  {
+    "title": "Jurassic World Dominion",
+    "year": 2022,
+    "score": 6.5,
+    "genre": "Macera",
+    "poster": "https://www.themoviedb.org/t/p/w1280/x6tTeF2cSwinSXBLqRwy7Byiqy1.jpg",
+    "director": "Colin Trevorrow",
+    "review": "İnsanlar ve dinozorların bir arada yaşamaya çalıştığı yeni bir dünya."
+  },
+  {
+    "title": "Furiosa: A Mad Max Saga",
+    "year": 2024,
+    "score": 6.0,
+    "genre": "Aksiyon",
+    "poster": "https://www.themoviedb.org/t/p/w1280/n1AkCpSi2KylD97xf1PUur3YJRk.jpg",
+    "director": "George Miller",
+    "review": "Furiosa'nın köken hikayesi, çorak topraklarda geçen bir intikam öyküsü."
+  },
+  {
+    "title": "Jurassic Park 7 (Rebirth)",
+    "year": 2025,
+    "score": 5.3,
+    "genre": "Macera",
+    "poster": "https://www.themoviedb.org/t/p/w1280/4P5TT9IXEfhBqzcgmDonrvMgbMv.jpg",
+    "director": "Gareth Edwards",
+    "review": "Serinin yeni halkası, henüz gizemini koruyor."
+  }
+]

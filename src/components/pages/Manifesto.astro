@@ -1,0 +1,134 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+interface Props {
+    lang: "tr" | "en";
+}
+
+const { lang } = Astro.props;
+
+const manifestoItems = [
+    {
+        left:
+            lang === "tr"
+                ? "Süreçler ve araçlardan ziyade"
+                : "Processes and tools",
+        right:
+            lang === "tr"
+                ? "bireyler ve etkileşimler"
+                : "individuals and interactions",
+        description:
+            lang === "tr"
+                ? "Araçlar önemlidir, ancak projeleri başarıya ulaştıran insanlardır."
+                : "Tools are important, but it's the people who make projects succeed.",
+    },
+    {
+        left:
+            lang === "tr"
+                ? "Kapsamlı dokümantasyondan ziyade"
+                : "Comprehensive documentation",
+        right: lang === "tr" ? "çalışan yazılım" : "working software",
+        description:
+            lang === "tr"
+                ? "Dokümanlar değerlidir, ancak çalışan bir kod en iyi kanıttır."
+                : "Documentation is valuable, but working code is the best proof.",
+    },
+    {
+        left:
+            lang === "tr"
+                ? "Sözleşme pazarlıklarından ziyade"
+                : "Contract negotiation",
+        right:
+            lang === "tr" ? "müşteri ile işbirliği" : "customer collaboration",
+        description:
+            lang === "tr"
+                ? "Kazan-kaybet yerine birlikte kazanmaya odaklanmak."
+                : "Focus on winning together rather than win-lose negotiations.",
+    },
+    {
+        left:
+            lang === "tr"
+                ? "Bir plana bağlı kalmaktan ziyade"
+                : "Following a plan",
+        right:
+            lang === "tr" ? "değişime karşılık vermek" : "responding to change",
+        description:
+            lang === "tr"
+                ? "Planlar değişebilir, önemli olan adaptasyon yeteneğidir."
+                : "Plans change; the ability to adapt is what matters.",
+    },
+];
+
+const title = "Manifesto";
+const description =
+    lang === "tr"
+        ? "Agile Manifesto ve değerlerim."
+        : "Agile Manifesto and my values.";
+const headerTitle = "Agile Manifesto.";
+const headerIntro =
+    lang === "tr"
+        ? "Yazılım geliştirmenin daha iyi yollarını, uygulayarak ve başkalarının da uygulamasına yardım ederek ortaya çıkartıyoruz."
+        : "We are uncovering better ways of developing software by doing it and helping others do it.";
+
+const footerNote =
+    lang === "tr"
+        ? 'Bu değerler sol taraftakilerin değersiz olduğu anlamına gelmez, <br class="hidden sm:block"/> ancak sağ taraftakilere <strong>daha fazla</strong> değer verdiğimiz anlamına gelir.'
+        : 'That is, while there is value in the items on the left, <br class="hidden sm:block"/> we value the items on the right <strong>more</strong>.';
+---
+
+<BaseLayout title={title} description={description}>
+    <div class="container-outer mt-16 sm:mt-32">
+        <div class="container-outer-inner">
+            <div class="container-inner">
+                <div class="container-inner-content">
+                    <!-- Header -->
+                    <header class="page-header mb-16">
+                        <h1 class="page-title">
+                            {headerTitle}
+                        </h1>
+                        <p class="page-intro">
+                            {headerIntro}
+                        </p>
+                    </header>
+
+                    <!-- Values Section -->
+                    <div class="grid grid-cols-1 gap-12">
+                        {
+                            manifestoItems.map((item, index) => (
+                                <div class="group relative flex flex-col gap-4 p-8 -mx-8 rounded-3xl hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors duration-300">
+                                    <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 text-xl md:text-2xl font-serif">
+                                        <span class="text-text-muted line-through decoration-zinc-300 dark:decoration-zinc-700 decoration-2">
+                                            {item.left}
+                                        </span>
+                                        <span class="hidden md:inline text-teal font-bold">
+                                            &rarr;
+                                        </span>
+                                        <span class="text-text font-medium group-hover:text-teal transition-colors">
+                                            {item.right}
+                                        </span>
+                                    </div>
+                                    <p class="text-text-secondary max-w-xl text-base leading-relaxed">
+                                        {item.description}
+                                    </p>
+                                    <div class="absolute -left-4 top-8 text-6xl font-black text-zinc-100 dark:text-zinc-800/50 -z-10 select-none">
+                                        {index + 1}
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                    <!-- Footer Note -->
+                    <div
+                        class="mt-24 pt-8 border-t border-zinc-100 dark:border-zinc-800"
+                    >
+                        <p
+                            class="text-text-muted italic"
+                            set:html={footerNote}
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</BaseLayout>

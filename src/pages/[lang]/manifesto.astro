@@ -1,0 +1,11 @@
+---
+import Manifesto from "../../components/pages/Manifesto.astro";
+
+export function getStaticPaths() {
+    return [{ params: { lang: "en" } }];
+}
+
+const { lang } = Astro.params;
+---
+
+<Manifesto lang={lang as "en" | "tr"} />

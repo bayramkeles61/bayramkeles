@@ -1,0 +1,68 @@
+---
+import { quotes } from "../data/quotes";
+
+interface Props {
+    class?: string;
+    lang?: "tr" | "en";
+}
+
+const { class: className, lang = Astro.currentLocale || "tr" } = Astro.props;
+const currentLang = lang;
+---
+
+<div
+    id="daily-quote-container"
+    data-lang={currentLang}
+    class:list={["opacity-30", className]}
+>
+    <div class="flex flex-col gap-3">
+        <div class="text-3xl font-medium text-text relative">
+            <span
+                id="quote-text"
+                class="opacity-0 transition-opacity duration-500 min-h-12 block text-right"
+                >Loading...</span
+            >
+        </div>
+        <footer
+            id="quote-author"
+            class="text-xl font-medium opacity-0 transition-opacity duration-500 delay-100 text-right dark:text-white"
+        >
+            Loading...
+        </footer>
+    </div>
+</div>
+
+<script define:vars={{ quotes }}>
+    function initQuote() {
+        // Select elements
+        const container = document.getElementById("daily-quote-container");
+        const quoteText = document.getElementById("quote-text");
+        const quoteAuthor = document.getElementById("quote-author");
+
+        if (!container || !quoteText || !quoteAuthor) return;
+
+        // Get current lang from DOM
+        const currentLang = container.dataset.lang || "tr";
+
+        // Pick random quote
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const quote = quotes[randomIndex];
+
+        // Update content
+        const text = currentLang === "tr" ? quote.tr : quote.en;
+        quoteText.textContent = `${text}`;
+        quoteAuthor.textContent = `${quote.author}`;
+
+        // Fade in
+        requestAnimationFrame(() => {
+            quoteText.classList.remove("opacity-0");
+            quoteAuthor.classList.remove("opacity-0");
+        });
+    }
+
+    // Run on initial load
+    initQuote();
+
+    // Run on view transitions
+    document.addEventListener("astro:page-load", initQuote);
+</script>

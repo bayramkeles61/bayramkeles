@@ -1,0 +1,130 @@
+---
+import SimplePageLayout from "../../layouts/SimplePageLayout.astro";
+import { getCollection } from "astro:content";
+import ScoreGrid from "../ScoreGrid.astro";
+
+interface Props {
+    lang: "tr" | "en";
+}
+
+const { lang } = Astro.props;
+
+// Fetch Movies
+const moviesData = await getCollection("movies");
+const movies = moviesData.flatMap((item: any) => item.data);
+const sortedMovies = [...movies].sort((a: any, b: any) => b.score - a.score);
+
+// Fetch Games
+const gamesData = await getCollection("games");
+const games = gamesData.flatMap((item: any) => item.data);
+const sortedGames = [...games].sort((a: any, b: any) => b.score - a.score);
+
+const title = lang === "tr" ? "İzlediklerim & Oynadıklarım" : "Watch & Play";
+const description =
+    lang === "tr"
+        ? "Sevdiğim filmler, oyunlar ve kısa değerlendirmelerim."
+        : "Movies, games I love and my short reviews.";
+const pageTitle =
+    lang === "tr"
+        ? "Küratörlük: seçilmiş hikayeler."
+        : "Curation: selected stories.";
+const pageIntro =
+    lang === "tr"
+        ? "Vaktimi harcamaktan keyif aldığım, bende iz bırakan yapımlar. Puanlar tamamen subjektif."
+        : "Works that I enjoyed spending time on, that left a mark on me. Scores are completely subjective.";
+
+const tabMovies = lang === "tr" ? "Filmler" : "Movies";
+const tabGames = lang === "tr" ? "Oyunlar" : "Games";
+---
+
+<SimplePageLayout
+    title={title}
+    description={description}
+    pageTitle={pageTitle}
+    pageIntro={pageIntro}
+>
+    <!-- Tabs -->
+    <div
+        class="flex items-center gap-2 mb-8 border-b border-zinc-100 dark:border-zinc-800 pb-0"
+    >
+        <button
+            id="tab-movies"
+            class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-black dark:hover:text-white transition-colors text-black dark:text-white dark:border-white"
+            data-target="content-movies"
+        >
+            {tabMovies}
+        </button>
+        <button
+            id="tab-games"
+            class="tab-btn px-4 py-2 text-sm font-medium text-zinc-500 border-b-2 border-transparent hover:text-black dark:hover:text-white transition-colors"
+            data-target="content-games"
+        >
+            {tabGames}
+        </button>
+    </div>
+
+    <!-- Content: Movies -->
+    <div
+        id="content-movies"
+        class="tab-content transition-opacity duration-300"
+    >
+        <ScoreGrid items={sortedMovies} type="movies" />
+    </div>
+
+    <!-- Content: Games -->
+    <div
+        id="content-games"
+        class="tab-content hidden opacity-0 transition-opacity duration-300"
+    >
+        <ScoreGrid items={sortedGames} type="games" />
+    </div>
+</SimplePageLayout>
+
+<script>
+    function initTabs() {
+        const buttons = document.querySelectorAll(".tab-btn");
+        const contents = document.querySelectorAll(".tab-content");
+
+        buttons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const targetId = btn.getAttribute("data-target");
+
+                // Update buttons
+                buttons.forEach((b) => {
+                    b.classList.remove(
+                        "text-black",
+                        "dark:text-white",
+                        "border-black",
+                        "dark:border-white",
+                    );
+                    b.classList.add("text-zinc-500", "border-transparent");
+                });
+                btn.classList.remove("text-zinc-500", "border-transparent");
+                btn.classList.add(
+                    "text-black",
+                    "dark:text-white",
+                    "border-black",
+                    "dark:border-white",
+                );
+
+                // Update content visibility
+                contents.forEach((c) => {
+                    c.classList.add("hidden", "opacity-0");
+                    if (c.id === targetId) {
+                        c.classList.remove("hidden");
+                        // Small delay to allow display:block to apply before opacity transition
+                        requestAnimationFrame(() => {
+                            c.classList.remove("opacity-0");
+                        });
+                    }
+                });
+            });
+        });
+    }
+
+    // Initialize on load
+    initTabs();
+
+    // Re-initialize on View Transitions
+    document.addEventListener("astro:after-swap", initTabs);
+</script>

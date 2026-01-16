@@ -1,0 +1,11 @@
+---
+import Movies from "../../components/pages/Movies.astro";
+
+export function getStaticPaths() {
+    return [{ params: { lang: "en" } }];
+}
+
+const { lang } = Astro.params;
+---
+
+<Movies lang={lang as "en" | "tr"} />

@@ -1,0 +1,93 @@
+---
+interface Props {
+    title: string;
+    score: number;
+    subtitle: string;
+    content: string;
+    id: string;
+    showScore?: boolean;
+}
+
+const { title, score, subtitle, content, id, showScore = true } = Astro.props;
+---
+
+<div class="border-b border-border last:border-b-0 group/item">
+    <button
+        class="accordion-trigger w-full flex items-center gap-4 py-6 text-left transition-colors"
+        aria-expanded="false"
+        aria-controls={`${id}-content`}
+        data-accordion-trigger
+    >
+        <!-- Score -->
+        {showScore && <span class="score shrink-0">{score}</span>}
+
+        <!-- Title and Subtitle -->
+        <div class="flex-1 min-w-0">
+            <span
+                class="block font-semibold text-text group-hover/item:text-teal transition-colors"
+                >{title}</span
+            >
+            <span class="block text-sm text-text-muted mt-0.5">{subtitle}</span>
+        </div>
+
+        <!-- Chevron -->
+        <svg
+            class="accordion-icon w-5 h-5 text-text-muted shrink-0 transition-transform duration-300 group-hover/item:text-teal"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </button>
+
+    <div id={`${id}-content`} class="accordion-content" data-accordion-content>
+        <div class="pb-6 pl-14">
+            <p class="text-text-secondary text-sm leading-relaxed">
+                {content}
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Handle accordion interactions
+    function initAccordions() {
+        const triggers = document.querySelectorAll("[data-accordion-trigger]");
+
+        triggers.forEach((trigger) => {
+            // Remove existing listeners to prevent duplicates if any (though cloneNode or swap usually handles this, this is safer)
+            // Actually, triggers are fresh DOM elements after swap, so no need to remove old listeners.
+
+            trigger.addEventListener("click", () => {
+                const content = trigger.nextElementSibling as HTMLElement;
+                const icon = trigger.querySelector(
+                    ".accordion-icon",
+                ) as HTMLElement;
+                const isOpen = content.classList.contains("open");
+
+                if (isOpen) {
+                    content.classList.remove("open");
+                    icon.style.transform = "rotate(0deg)";
+                    trigger.setAttribute("aria-expanded", "false");
+                    content.style.maxHeight = "0px";
+                } else {
+                    content.classList.add("open");
+                    icon.style.transform = "rotate(180deg)";
+                    trigger.setAttribute("aria-expanded", "true");
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    }
+
+    // Run on initial load
+    initAccordions();
+
+    // Run on view transition navigation
+    document.addEventListener("astro:after-swap", initAccordions);
+</script>

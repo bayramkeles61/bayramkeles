@@ -1,0 +1,25 @@
+[
+    {
+        "title": "Gün Batımı",
+        "description": "Boğaz'da muhteşem bir gün batımı anı.",
+        "image": "/images/gallery/sunset.jpg",
+        "date": "2024-08-15",
+        "location": "İstanbul, Türkiye",
+        "category": "Manzara"
+    },
+    {
+        "title": "Dağ Yürüyüşü",
+        "description": "Uludağ'da hafta sonu trekking.",
+        "image": "/images/gallery/mountain.jpg",
+        "date": "2024-06-20",
+        "location": "Bursa, Türkiye",
+        "category": "Doğa"
+    },
+    {
+        "title": "Kahve Molası",
+        "description": "Kod yazarken kahve vazgeçilmez.",
+        "image": "/images/gallery/coffee.jpg",
+        "date": "2024-09-01",
+        "category": "Yaşam"
+    }
+]

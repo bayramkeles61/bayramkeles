@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SimplePageLayout from "../../layouts/SimplePageLayout.astro";
+import { getCollection } from "astro:content";
+import AccordionItem from "../AccordionItem.astro";
+
+interface Props {
+    lang: "tr" | "en";
+}
+
+const { lang } = Astro.props;
+
+const gamesData = await getCollection("games");
+const games = gamesData[0]?.data || [];
+const sortedGames = [...games].sort((a: any, b: any) => b.score - a.score);
+
+const title = lang === "tr" ? "Oyunlar" : "Games";
+const description =
+    lang === "tr"
+        ? "Seçtiğim oyunlar ve kısa değerlendirmelerim."
+        : "Games I've picked and my short reviews.";
+const pageTitle =
+    lang === "tr"
+        ? "Oyunlar: interaktif hikayeler ve deneyimler."
+        : "Games: interactive stories and experiences.";
+const pageIntro =
+    lang === "tr"
+        ? "Oynayıp beğendiğim oyunlar. Tıklayarak görüşlerimi okuyabilirsin. Özellikle hikaye odaklı oyunlara düşkünüm."
+        : "Games I've played and liked. Click to read my thoughts. I'm especially fond of story-driven games.";
+
+const noGamesText =
+    lang === "tr" ? "Henüz oyun eklenmedi." : "No games added yet.";
+---
+
+<SimplePageLayout
+    title={title}
+    description={description}
+    pageTitle={pageTitle}
+    pageIntro={pageIntro}
+>
+    <!-- Games List -->
+    {
+        sortedGames.length > 0 ? (
+            <div class="border-t border-zinc-100 dark:border-zinc-700/40">
+                {sortedGames.map((game: any, index: number) => (
+                    <AccordionItem
+                        title={game.title}
+                        score={game.score}
+                        subtitle={`${game.year} · ${game.platform}`}
+                        content={game.review}
+                        id={`game-${index}`}
+                    />
+                ))}
+            </div>
+        ) : (
+            <div class="text-center py-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-800 mb-4">
+                    <span class="text-3xl">🎮</span>
+                </div>
+                <p class="text-zinc-400 dark:text-zinc-500">{noGamesText}</p>
+            </div>
+        )
+    }
+</SimplePageLayout>

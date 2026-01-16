@@ -1,0 +1,36 @@
+[
+    {
+        "title": "Personal Website",
+        "description": "Astro.js ile geliştirdiğim kişisel web sitem. Blog, portföy ve daha fazlası.",
+        "github": "https://github.com/bayramkeles/personal-website",
+        "tags": [
+            "Astro",
+            "TypeScript",
+            "Tailwind CSS"
+        ],
+        "featured": true
+    },
+    {
+        "title": "Task Manager CLI",
+        "description": "Terminal üzerinden görev yönetimi yapabileceğiniz hafif bir CLI aracı.",
+        "github": "https://github.com/bayramkeles/task-manager-cli",
+        "tags": [
+            "Node.js",
+            "CLI",
+            "TypeScript"
+        ],
+        "featured": false
+    },
+    {
+        "title": "Weather App",
+        "description": "Gerçek zamanlı hava durumu uygulaması. OpenWeather API kullanılarak geliştirildi.",
+        "github": "https://github.com/bayramkeles/weather-app",
+        "demo": "https://weather.bayramkeles.com",
+        "tags": [
+            "React",
+            "API",
+            "CSS"
+        ],
+        "featured": true
+    }
+]

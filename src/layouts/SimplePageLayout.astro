@@ -1,0 +1,44 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+    title: string;
+    description: string;
+    pageTitle: string;
+    pageIntro?: string;
+}
+
+const { title, description, pageTitle, pageIntro } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+    <div class="">
+        <header
+            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4"
+        >
+            <div class="max-w-2xl">
+                <h1
+                    class="leading-tight text-black dark:text-white font-sans font-semibold text-5xl tracking-tighter mb-6"
+                >
+                    {pageTitle}
+                </h1>
+                {
+                    pageIntro ? (
+                        <p class="mt-6 text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            {pageIntro}
+                        </p>
+                    ) : (
+                        <slot name="intro" />
+                    )
+                }
+            </div>
+            <div class="shrink-0">
+                <slot name="header-action" />
+            </div>
+        </header>
+
+        <div class="mt-16 sm:mt-20">
+            <slot />
+        </div>
+    </div>
+</BaseLayout>

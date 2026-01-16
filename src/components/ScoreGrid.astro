@@ -1,0 +1,82 @@
+---
+interface Props {
+    items: any[];
+    type: "movies" | "games";
+}
+
+const { items, type } = Astro.props;
+
+// Group items by score
+const groupedItems = items.reduce((acc: any, item: any) => {
+    const score = item.score;
+    if (!acc[score]) {
+        acc[score] = [];
+    }
+    acc[score].push(item);
+    return acc;
+}, {});
+
+// Sort scores descending
+const sortedScores = Object.keys(groupedItems)
+    .map(Number)
+    .sort((a, b) => b - a);
+
+// Default icon depending on type
+const defaultIcon = type === "movies" ? "🎬" : "🎮";
+---
+
+<div class="space-y-12 sm:space-y-16 mt-8 sm:mt-12">
+    {
+        sortedScores.map((score) => (
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-12">
+                {/* Left Column: Score */}
+                <div class="flex flex-row sm:flex-col items-center sm:items-start pt-0 sm:pt-6 pb-4 sm:pb-0 border-b sm:border-b-0 border-zinc-100 dark:border-zinc-800">
+                    <div class="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 text-lg sm:text-xl font-bold rounded-xl bg-linear-to-br from-teal-500 to-sky-500 text-white shadow-sm sticky top-24 shrink-0 z-10 transition-all duration-300 hover:scale-105 hover:shadow-md hover:from-teal-400 hover:to-sky-400">
+                        {score}
+                    </div>
+                </div>
+
+                {/* Right Column: Items Grid */}
+                <div class="flex-1 flex flex-wrap gap-4 border-t border-zinc-100 dark:border-zinc-700/40 p-4 sm:p-0 pt-4 sm:pt-0">
+                    {groupedItems[score].map((item: any) => (
+                        <div class="group relative w-[160px] h-[240px] rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                            {item.poster || item.cover ? (
+                                <img
+                                    src={item.poster || item.cover}
+                                    alt={item.title}
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy"
+                                />
+                            ) : (
+                                <div class="w-full h-full flex flex-col items-center justify-center p-4 text-center text-zinc-400">
+                                    <span class="text-4xl mb-2">
+                                        {defaultIcon}
+                                    </span>
+                                    <span class="text-xs font-medium text-zinc-500">
+                                        {item.title}
+                                    </span>
+                                </div>
+                            )}
+
+                            {/* Overlay with details on hover */}
+                            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-white">
+                                <h3 class="font-bold text-sm leading-tight mb-2 text-balance">
+                                    {item.title}
+                                </h3>
+                                <div class="text-[10px] text-zinc-400 mb-2 uppercase tracking-wider font-medium">
+                                    {item.year} ·{" "}
+                                    {type === "movies"
+                                        ? item.genre
+                                        : item.platform}
+                                </div>
+                                <p class="text-xs text-zinc-300 line-clamp-3 leading-relaxed">
+                                    {item.review}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        ))
+    }
+</div>
