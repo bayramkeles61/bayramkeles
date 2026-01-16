@@ -36,8 +36,14 @@ const gamesCollection = defineCollection({
 
 // Proje schema
 const projectSchema = z.object({
-    title: z.string(),
-    description: z.string(),
+    title: z.object({
+        tr: z.string(),
+        en: z.string(),
+    }),
+    description: z.object({
+        tr: z.string(),
+        en: z.string(),
+    }),
     github: z.string().url(),
     demo: z.string().url().optional(),
     tags: z.array(z.string()),
