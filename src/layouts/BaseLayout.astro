@@ -115,16 +115,12 @@ const currentLocale = Astro.currentLocale || "tr";
       }
     </script>
     <ClientRouter />
-    {
-      import.meta.env.PUBLIC_UMAMI_WEBSITE_ID && (
-        <script
-          is:inline
-          defer
-          src={import.meta.env.PUBLIC_UMAMI_URL}
-          data-website-id={import.meta.env.PUBLIC_UMAMI_WEBSITE_ID}
-        />
-      )
-    }
+    <script
+      is:inline
+      defer
+      src={import.meta.env.PUBLIC_UMAMI_URL}
+      data-website-id={import.meta.env.PUBLIC_UMAMI_WEBSITE_ID}
+    ></script>
   </head>
   <body class="flex h-full">
     <!-- Full Screen Page Loader -->
